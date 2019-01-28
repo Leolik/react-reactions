@@ -25,7 +25,7 @@ export const SlackSelector = ({ active, scrollHeight, frequent, removeEmojis, on
   })
 
   return (
-    <div style={ styles.menu }>
+    <div style={ styles.menu } className="sci-selector">
       { useFonts && <SlackFontsCSS /> }
       <SlackSelectorCSS />
       <SlackSelectorHeader active={ active } />

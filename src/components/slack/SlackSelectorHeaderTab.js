@@ -11,7 +11,7 @@ export const SlackSelectorHeaderTab = ({ hover, onClick, id, icon, active }) => 
         padding: '5px 8px 7px',
         borderRadius: '6px 6px 0 0',
         marginRight: '1px',
-        borderBottom: '3px solid tranlsparent',
+        borderBottom: '3px solid transparent',
         cursor: 'pointer',
       },
       icon: {
