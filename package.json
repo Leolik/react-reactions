@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js --port 2570 --quiet",
     "docs-dist": "webpack --config webpack.config.prod.js",
-    "lib": "npm run clean && babel src -d lib",
+    "lib": "npm run clean && babel src -d lib && cp -r src/assets lib",
     "clean": "rm -rf lib && mkdir lib",
     "prepublish": "npm run lib"
   },
@@ -53,6 +53,7 @@
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "normalize.css": "^4.2.0",
+    "pre-commit": "^1.2.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-highlight": "^0.9.0",
