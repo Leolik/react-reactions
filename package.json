@@ -8,8 +8,9 @@
     "docs-dist": "webpack --config webpack.config.prod.js",
     "lib": "npm run clean && babel src -d lib && cp -r src/assets lib",
     "clean": "rm -rf lib && mkdir lib",
-    "prepublish": "npm run lib"
+    "precommit": "npm run lib && git add ."
   },
+  "pre-commit": ["precommit"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/casesandberg/react-reactions.git"
