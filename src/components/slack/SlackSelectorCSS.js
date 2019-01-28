@@ -5,13 +5,6 @@ export const SlackSelectorCSS = () => {
     <style
       dangerouslySetInnerHTML={{ __html: `
 
-        @font-face {
-          font-family: Slack;
-          src: url(fonts/slack-icons-Regular.eot);
-          src: url(fonts/slack-icons-Regular.eot?#iefix) format('embedded-opentype'),
-               url(fonts/slack-icons-Regular.woff) format('woff'),
-               url(fonts/slack-icons-Regular.ttf) format('truetype')
-        }
         .frame::-webkit-scrollbar {
             -webkit-appearance: none;
         }

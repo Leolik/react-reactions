@@ -1,12 +1,13 @@
 import React from 'react'
 import reactCSS from 'reactcss'
 
+import SlackFontsCSS from './SlackFontsCSS'
 import SlackSelectorCSS from './SlackSelectorCSS'
 import SlackSelectorHeader from './SlackSelectorHeader'
 import SlackSelectorItems from './SlackSelectorItems'
 import SlackSelectorFooter from './SlackSelectorFooter'
 
-export const SlackSelector = ({ active, scrollHeight, frequent, removeEmojis, onSelect }) => {
+export const SlackSelector = ({ active, scrollHeight, frequent, removeEmojis, onSelect, useFonts }) => {
   const styles = reactCSS({
     'default': {
       menu: {
@@ -25,6 +26,7 @@ export const SlackSelector = ({ active, scrollHeight, frequent, removeEmojis, on
 
   return (
     <div style={ styles.menu }>
+      { useFonts && <SlackFontsCSS /> }
       <SlackSelectorCSS />
       <SlackSelectorHeader active={ active } />
       <SlackSelectorItems
@@ -39,6 +41,7 @@ export const SlackSelector = ({ active, scrollHeight, frequent, removeEmojis, on
 }
 
 SlackSelector.defaultProps = {
+  useFonts: true,
   active: 'mine',
   scrollHeight: '270px',
   removeEmojis: ['🙂', '🙃', '☺️', '🤑', '🤓', '🤗', '🙄', '🤔', '🙁', '☹️', '🤐', '🤒',

@@ -4,9 +4,10 @@ import React from 'react'
 import reactCSS, { hover } from 'reactcss'
 import _ from 'lodash'
 
+import SlackFontsCSS from './SlackFontsCSS'
 import SlackCounterGroup from './SlackCounterGroup'
 
-export const SlackCounter = ({ hover, counters, user, onSelect, onAdd }) => {
+export const SlackCounter = ({ hover, counters, user, onSelect, onAdd, useFonts }) => {
   const styles = reactCSS({
     'default': {
       counter: {
@@ -36,6 +37,7 @@ export const SlackCounter = ({ hover, counters, user, onSelect, onAdd }) => {
 
   return (
     <div style={ styles.counter }>
+      { useFonts && <SlackFontsCSS /> }
       { _.map(groups, (c, emoji) => {
         const names = _.map(c, 'by')
         return (
@@ -56,6 +58,10 @@ export const SlackCounter = ({ hover, counters, user, onSelect, onAdd }) => {
       </div>
     </div>
   )
+}
+
+SlackCounter.defaultProps = {
+  useFonts: true,
 }
 
 export default hover(SlackCounter)
